@@ -17,6 +17,7 @@ int main() {
     Node *n2 = (Node *) malloc(sizeof(Node));
     n1 -> next = n2;
     n2 -> val = 2;
+    n2 -> next = NULL;
     Node *n3 = (Node *) malloc(sizeof(Node));
     n2 -> next = n3;
     n3 -> val = 3;
@@ -29,11 +30,22 @@ int main() {
     printf("node is on %d\n",ptr->val);
 
     // deallocating memory
-    for (ptr = head; ptr->next != NULL; ptr = ptr -> next) {
-        free(ptr);
+   /* 
+    * invalid read of 8 memory.
+    * for (ptr = head; ptr->next != NULL; ptr = ptr -> next) {
+      	printf("before deallocating, the number is %d\n",ptr->val);
+	free(ptr);
     }
     free(ptr);
-
+    */
+    Node *free_ptr = head;
+    
+    while (free_ptr -> next != NULL) {
+	    Node *tmp_ptr = free_ptr;
+	    free_ptr = free_ptr -> next;
+	    free(tmp_ptr);
+    }
+    free(free_ptr);
 
     return 0;
     
