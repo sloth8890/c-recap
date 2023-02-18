@@ -16,7 +16,6 @@ int free_all(Node *head) {
     {
         Node *tmp_ptr = ptr;
         ptr = ptr -> next;
-        free(tmp_ptr->value);
         free(tmp_ptr->name);
         free(tmp_ptr);
     }
@@ -30,8 +29,9 @@ void print_all(Node *head) {
         printf("%s node value is %d.\n",ptr -> name, ptr -> value);
         ptr = ptr -> next;
     }
+    printf("%s node value is %d.\n",ptr -> name, ptr -> value);
 }
-
+	
 int main () {
     // initializing doubly linked lists
     Node *n1 = (Node *) malloc(sizeof(Node));
@@ -60,4 +60,7 @@ int main () {
 
     //printing sequences;
     print_all(n1);
+    free_all(n1);
+    
+    return 0;
 }
