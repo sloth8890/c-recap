@@ -11,12 +11,16 @@ struct Node {
 typedef struct Node Node;
 
 int free_all(Node *head) {
-    Node * ptr;
+    if (head == NULL) {
+    	return -1;
+    }
+    Node *ptr = head;
     while (ptr -> next != NULL) 
     {
         Node *tmp_ptr = ptr;
         ptr = ptr -> next;
-        free(tmp_ptr->name);
+        //free(tmp_ptr->name);
+        tmp_ptr -> next = NULL;
         free(tmp_ptr);
     }
     free(ptr);
@@ -60,6 +64,8 @@ int main () {
 
     //printing sequences;
     print_all(n1);
+    
+    
     free_all(n1);
     
     return 0;
