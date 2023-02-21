@@ -19,8 +19,8 @@ int free_all(Node *head) {
     {
         Node *tmp_ptr = ptr;
         ptr = ptr -> next;
-        //free(tmp_ptr->name);
         tmp_ptr -> next = NULL;
+        free(tmp_ptr->name);
         free(tmp_ptr);
     }
     free(ptr);
