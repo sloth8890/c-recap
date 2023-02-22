@@ -3,6 +3,7 @@
 
 int main() {
     //? gcc -D<identifier> is equivalent to #define identifier 
+    // ex) gcc -DWIDTH=600 -DTEST prog.c
 
     /*
     #ifdef
