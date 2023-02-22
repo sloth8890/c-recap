@@ -8,7 +8,6 @@ int main() {
         printf("Error opening file.\n");
         return 1;
     }
-    //61230
 
     char delimiter = '|'; // the delimiter we're looking for
     char* buffer = (char*) malloc(100 * sizeof(char)); // allocate buffer for string
