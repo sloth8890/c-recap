@@ -13,6 +13,7 @@ int main() {
     char* buffer = (char*) malloc(100 * sizeof(char)); // allocate buffer for string
     int index = 0;
     char c;
+    //TODO implement edge case for buffer overflow.
     while ((c = fgetc(file)) != EOF) { // read file character by character
         if (c == delimiter) {
             buffer[index] = '\0'; // add null terminator to string
