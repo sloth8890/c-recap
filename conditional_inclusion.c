@@ -2,6 +2,8 @@
 #include "declarations.h"
 
 int main() {
+    //? gcc -D<identifier> is equivalent to #define identifier 
+
     /*
     #ifdef
     #if
