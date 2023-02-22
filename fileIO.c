@@ -32,7 +32,7 @@ int main() {
 
     // Print the strings
     for (int i = 0; i < string_count; i++) {
-        printf("String %d: %s\n", i + 1, strings[i]);
+        printf("Song %d: %s\n", i + 1, strings[i]);
     }
 
     return 0;
